@@ -9,5 +9,11 @@ edition = "2021"
 clap = { version = "4.4.11", features = ["derive"] }
 log = "0.4.20"
 minreq = "2.11.0"
-safenet = { version = "0.1.0", git = "https://github.com/mateocabanal/safenet", default-features = false, features = ["ring"] }
+safenet = { version = "0.1.0", git = "https://github.com/mateocabanal/safenet", default-features = false }
 simple_logger = "4.3.0"
+
+[features]
+ring = ["safenet/ring"]
+rust_crypto = ["safenet/rust_crypto"]
+
+default = ["ring"]
