@@ -1,0 +1,12 @@
+/home/mateo/SYNC/RUST/scurl/target/debug/deps/libminreq-1537e0bf677f942f.rmeta: /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/lib.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/connection.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/error.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/http_url.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/request.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/response.rs
+
+/home/mateo/SYNC/RUST/scurl/target/debug/deps/libminreq-1537e0bf677f942f.rlib: /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/lib.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/connection.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/error.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/http_url.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/request.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/response.rs
+
+/home/mateo/SYNC/RUST/scurl/target/debug/deps/minreq-1537e0bf677f942f.d: /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/lib.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/connection.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/error.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/http_url.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/request.rs /home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/response.rs
+
+/home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/lib.rs:
+/home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/connection.rs:
+/home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/error.rs:
+/home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/http_url.rs:
+/home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/request.rs:
+/home/mateo/.cargo/registry/src/index.crates.io-6f17d22bba15001f/minreq-2.11.0/src/response.rs:
