@@ -36,7 +36,7 @@ jobs:
           - release_for: MacOS - x86_64
             os: macOS-latest
             bin: scurl
-            target: x86_64-aaple-darwin
+            target: x86_64-apple-darwin
             command: build
 
           - release_for: MacOS - Apple Silicon
@@ -60,19 +60,5 @@ jobs:
       with:
         name: ${{ matrix.platform.release_for }}
         path: target/${{ matrix.platform.target }}/release/${{ matrix.platform.bin }}
-
-  
-  build_selfhosted:
-    runs-on: self-hosted
-
-    steps:
-    - uses: Swatinem/rust-cache@v2
-    - uses: actions/checkout@v3
-    - name: Build binary
-      run: cargo build --release
-    - uses: actions/upload-artifact@v3
-      with:
-        name: Linux arm64
-        path: target/release/scurl
       
   
