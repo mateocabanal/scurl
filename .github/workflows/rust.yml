@@ -39,4 +39,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: ${{ matrix.platform.release_for }}
-        path: "target/release/scurl"
+        path: "scurl"
