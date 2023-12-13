@@ -40,11 +40,16 @@ fn main() {
 
     let uuid = APPSTATE.read().unwrap().uuid.to_string();
 
-    let base_url_split = args.url.split('/').collect::<Vec<&str>>();
-    let base_url =
-        base_url_split.first().unwrap().to_string() + "//" + *base_url_split.get(2).unwrap();
+    let base_url_split = if let Some(url) = args.url.strip_prefix("http://") {
+        url
+    } else if let Some(url) = args.url.strip_prefix("https://") {
+        url
+    } else {
+        panic!("no http prefix on url")
+    };
+    let base_url = base_url_split.split_at(base_url_split.find('/').unwrap()).0;
 
-    let conn_init_url = format!("{base_url}/conn/init");
+    let conn_init_url = format!("http://{base_url}/conn/init");
     log::debug!("conn_init url: {conn_init_url}");
 
     let conn_init_frame = InitFrame::default();

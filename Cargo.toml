@@ -8,7 +8,7 @@ edition = "2021"
 [dependencies]
 clap = { version = "4.4.11", features = ["derive"] }
 log = "0.4.20"
-minreq = "2.11.0"
+minreq = { version = "2.11.0", features = ["https"] }
 safenet = { version = "0.1.0", git = "https://github.com/mateocabanal/safenet", default-features = false }
 simple_logger = "4.3.0"
 
