@@ -1,7 +1,7 @@
 use clap::Parser;
 use safenet::{
     app_state::AppState,
-    frame::{DataFrame, Frame, InitFrame},
+    frame::{DataFrame, EncryptionType, Frame, InitFrame},
     uuid::Uuid,
     APPSTATE,
 };
@@ -19,13 +19,15 @@ struct Args {
 
     #[arg(short, long)]
     verbose: bool,
+
+    #[arg(short, long, default_value = "kyberdith")]
+    encryption_alg: String,
 }
 
 #[cfg(any(debug_assertions, feature = "time"))]
 use std::time::Instant;
 
 fn main() {
-
     AppState::init().unwrap();
     let args = Args::parse();
 
@@ -34,6 +36,13 @@ fn main() {
     } else {
         log::LevelFilter::Info
     };
+
+    let enc_type = match args.encryption_alg.as_str() {
+        "kyberdith" => EncryptionType::KyberDith,
+        "legacy" => EncryptionType::Legacy,
+        a => panic!("{} is not a valid encryption algorithm", a),
+    };
+
     simple_logger::SimpleLogger::new()
         .with_level(log_level)
         .env()
@@ -58,11 +67,10 @@ fn main() {
     let conn_init_url = format!("http://{base_url}/conn/init");
     log::debug!("conn_init url: {conn_init_url}");
 
-    let conn_init_frame = InitFrame::default();
+    let conn_init_frame = InitFrame::new(enc_type);
     let conn_init_res = minreq::post(conn_init_url)
         .with_header("s-uuid", &uuid)
         .with_body(conn_init_frame.to_bytes())
-        .with_timeout(1000)
         .send();
 
     if let Ok(res) = conn_init_res {
@@ -77,7 +85,7 @@ fn main() {
             };
 
             #[cfg(any(debug_assertions, feature = "time"))]
-            log::info!("init took {}ms", time.elapsed().as_millis());
+            log::debug!("init took {}ms", time.elapsed().as_millis());
 
             let data_res = match method {
                 minreq::Method::Get => minreq::get(args.url).with_header("s-uuid", &uuid).send(),
@@ -108,7 +116,7 @@ fn main() {
                     frame.decode_frame().unwrap();
 
                     #[cfg(any(debug_assertions, feature = "time"))]
-                    log::info!("data took {}ms", time.elapsed().as_millis());
+                    log::debug!("data took {}ms", time.elapsed().as_millis());
 
                     println!("{}", std::str::from_utf8(&frame.body).unwrap());
                 } else {
